@@ -25,6 +25,7 @@ import { Button } from "@/components/ui/button";
 import { FileUpload } from "@/components/file-upload";
 import { useRouter } from "next/navigation";
 import { useModal } from "@/hooks/use-model-store";
+import { on } from "events";
 
 const formSchema = z.object({
     name: z.string().min(1, {
@@ -57,6 +58,7 @@ export const CreateServerModal = () => {
 
             form.reset();
             router.refresh();
+            onClose();
         } catch (error) {
             console.log(error);
         }

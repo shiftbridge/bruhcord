@@ -1,4 +1,3 @@
-import { CreateServerModal } from "@/components/modals/create-server-modal";
 import { NavigationSidebar } from "@/components/navigation/navigation-sidebar";
 
 const MainLayout = async ({
