@@ -1,12 +1,8 @@
 "use client";
 
+import { UploadDropzone } from "@/lib/uploadthing";
 import { X } from "lucide-react";
 import Image from "next/image";
-
-import { UploadDropzone } from "@/lib/uploadthing";
-
-import "@uploadthing/react/styles.css";
-import { on } from "events";
 
 interface FileUploadProps {
     onChange: (url?: string) => void;
@@ -17,7 +13,7 @@ interface FileUploadProps {
 export const FileUpload = ({ onChange, value, endpoint }: FileUploadProps) => {
     const fileType = value?.split(".").pop();
 
-    if (value && fileType !== "pdf" && fileType !== "video" && fileType !== "blob") {
+    if (value && fileType !== "pdf") {
         return (
             <div className="relative h-20 w-20">
                 <Image
