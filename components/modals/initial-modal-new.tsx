@@ -2,6 +2,6 @@
 
 import { redirect } from "next/navigation";
 
-export const InitialModal = () => {
+export const InitialModalNew = () => {
     return redirect("invite/b05e667c-5a1d-41e2-9500-6804e50a85c3")
 }
