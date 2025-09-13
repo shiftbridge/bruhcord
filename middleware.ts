@@ -1,18 +1,16 @@
-import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
+import { authMiddleware } from "@clerk/nextjs/server";
 
-const isPublicRoute = createRouteMatcher([
-  "/api/uploadthing",
-]);
-
-export default clerkMiddleware((auth, req) => {
-  if (!isPublicRoute(req)) {
-    auth.protect();
-  }
+// See https://clerk.com/docs/references/nextjs/auth-middleware
+// for more information about configuring your Middleware
+export default authMiddleware({
+  // Allow signed out users to access the specified routes:
+  publicRoutes: ['/api/uploadthing'],
 });
-
 
 export const config = {
   matcher: [
-    "/((?!.*\\..*|_next).*)", "/", "/(api|trpc)(.*)",
-  ],
+    // Exclude files with a "." followed by an extension, which are typically static files.
+    // Exclude files in the _next directory, which are Next.js internals.
+    "/((?!.+\\.[\\w]+$|_next).*)", "/", "/(api|trpc)(.*)"
+  ]
 };
