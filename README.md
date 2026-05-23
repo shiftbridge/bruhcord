@@ -1,5 +1,5 @@
 ## Bruhcord
 
-<span style="color:red">UNMAINTAINED<span>
+# UNMAINTAINED
 
-Bruhcord is an open-source chat app that is like Discord.
+Bruhcord is an open-source chat app similar to Discord. It is now unmaintained as I lost interest.
